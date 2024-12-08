@@ -7,7 +7,7 @@ public class Bebida extends Produto {
     private boolean alcoolica;
 
     public Bebida() {
-        super();
+        super("", "", 0.0, 0);
         this.tamanhoMl = 0;
         this.alcoolica = false;
     }
