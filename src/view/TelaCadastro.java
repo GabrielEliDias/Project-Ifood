@@ -5,6 +5,12 @@
  */
 package View;
 
+import java.util.HashSet;
+import java.util.Set;
+import model.bean.abstracts.Usuario;
+import model.bean.cliente.Cliente;
+import model.dao.ClienteDAO;
+
 /**
  *
  * @author gabri
@@ -45,7 +51,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         txtEndereco = new javax.swing.JTextField();
         txtCEP = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        txtSexo = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txtCPF = new javax.swing.JFormattedTextField();
@@ -131,6 +137,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         jLabel6.setText("Nome completo:");
 
+        txtSenhaCadastro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaCadastroActionPerformed(evt);
+            }
+        });
+
         jLabel7.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         jLabel7.setText("Confirmação da senha:");
 
@@ -153,7 +165,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         jLabel9.setText("CPF");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Não falar", "Masculino", "Feminino", "Outro" }));
+        txtSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Não falar", "Masculino", "Feminino", "Outro" }));
 
         jLabel10.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         jLabel10.setText("Sexo:");
@@ -177,6 +189,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        txtTelefone.setText("+55 ()         -    ");
         txtTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefoneActionPerformed(evt);
@@ -282,7 +295,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                                                     .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(18, 18, 18)
                                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel10)
                                                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel12)))
@@ -327,7 +340,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -403,11 +416,49 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+//        Cliente usuario = new Cliente();
+//        UsuarioDAO dao = new UsuarioDAO();
+//        
+//        if (txtEmailCadastro.getText().equals(txtConfirmacaoEmail.getText())) {
+//            usuario.setEmail(txtEmailCadastro.getText());
+//        }
+//        if (txtSenhaCadastro.getText().equals(txtSenhaCadastroConfirmacao.getText())) {
+//            usuario.setSenha(txtSenhaCadastro.getText());
+//        }
+//        if (txtNomeCompleto.getText() != null) {
+//            usuario.setNome(txtNomeCompleto.getText());
+//        }
+//        if (txtCPF.getText() != null) {
+//            usuario.setCpf(txtCPF.getText());
+//        }
+//        if (txtSexo.getName() != null) {
+//            usuario.setSexo(txtSexo.getSelectedItem().toString());
+//        }
+//        if (txtEndereco.getText() != null) {
+//            usuario.setEndereco(txtEndereco.getText());
+//        }
+//        if (txtCEP.getText() != null) {
+//            usuario.setCep(txtCEP.getText());
+//        }
+//        if (txtTelefone.getText() != null) {
+//            usuario.setTelefone(txtTelefone.getText());
+//        }
+//        if (txtComplementoEndereco.getText() != null) {
+//            usuario.setComplemento(txtComplementoEndereco.getText());
+//        }
+//        if (txtDataNascimento.getText() != null) {
+//            usuario.setDataNascimento(txtDataNascimento.getText());
+//        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtSenhaCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaCadastroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaCadastroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -447,7 +498,6 @@ public class TelaCadastro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -477,6 +527,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JTextField txtNomeCompleto;
     private javax.swing.JPasswordField txtSenhaCadastro;
     private javax.swing.JPasswordField txtSenhaCadastroConfirmacao;
+    private javax.swing.JComboBox<String> txtSexo;
     private javax.swing.JFormattedTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }

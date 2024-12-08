@@ -1,5 +1,6 @@
 package model.bean.cliente;
 
+import java.time.LocalDate;
 import model.bean.abstracts.Usuario;
 
 public class Cliente extends Usuario {
@@ -10,7 +11,7 @@ public class Cliente extends Usuario {
     private String endereco;
     private String complemento;
     private String telefone;
-    private String dataNascimento;
+    private LocalDate dataNascimento;
 
     public Cliente() {
         super("", "");
@@ -21,10 +22,10 @@ public class Cliente extends Usuario {
         this.endereco = "";
         this.complemento = "";
         this.telefone = "";
-        this.dataNascimento = "";
+        this.dataNascimento = null;
     }
 
-    public Cliente(String nome, String cpf, String sexo, String cep, String endereco, String complemento, String telefone, String dataNascimento, String email, String senha) {
+    public Cliente(String nome, String cpf, String sexo, String cep, String endereco, String complemento, String telefone, LocalDate dataNascimento, String email, String senha) {
         super(email, senha);
         this.nome = nome;
         this.cpf = cpf;
@@ -92,11 +93,11 @@ public class Cliente extends Usuario {
         this.telefone = telefone;
     }
 
-    public String getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(String dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
