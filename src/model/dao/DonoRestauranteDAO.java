@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.dao;
 
 import connection.ConnectionFactory;
@@ -13,10 +9,6 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 import model.bean.donodorestaurante.DonoRestaurante;
 
-/**
- *
- * @author Hugo
- */
 public class DonoRestauranteDAO {
     public void create(DonoRestaurante dono) {
     Connection con = ConnectionFactory.getConnection();
@@ -39,7 +31,7 @@ public class DonoRestauranteDAO {
 
             // Inserindo na tabela `donosderestaurante`
             stmtDono = con.prepareStatement(
-                "INSERT INTO clientes (usuario_id, restaurante_id) " +
+                "INSERT INTO donosderestaurante (usuario_id, restaurante_id) " +
                 "VALUES (?, ?)"
             );
             stmtDono.setInt(1, usuarioId);

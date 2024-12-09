@@ -6,6 +6,7 @@
 package View;
 
 import javax.swing.JOptionPane;
+import model.bean.cliente.Cliente;
 
 /**
  *
@@ -404,64 +405,62 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDataNascimentoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       int variavel = 0;
+        // Verifica se todos os campos foram preenchidos (o complemento é opcional)
+        int variavel = 0;
 
-// Verifica o e-mail
-if (txtEmailCadastro.getText() == null || txtEmailCadastro.getText().isEmpty() || 
-    !txtEmailCadastro.getText().equals(txtEmailConfirmar.getText())) {
-    variavel++;
-}
+        if (txtEmailCadastro.getText() == null || txtEmailCadastro.getText().isEmpty() || !txtEmailCadastro.getText().equals(txtEmailConfirmar.getText())) {
+            variavel++;
+        }
 
-// Verifica a senha
-if (txtSenhaCadastro.getText() == null || txtSenhaCadastro.getText().isEmpty() || 
-    !txtSenhaCadastro.getText().equals(txtSenhaConfirmar.getText())) {
-    variavel++;
-}
+        if (txtSenhaCadastro.getText() == null || txtSenhaCadastro.getText().isEmpty() || 
+        !txtSenhaCadastro.getText().equals(txtSenhaConfirmar.getText())) {
+            variavel++;
+        }
 
-// Verifica se o CPF está vazio
-if (txtCPF.getText() == null || txtCPF.getText().isEmpty()) {
-    variavel++;
-}
+        if (txtCPF.getText() == null || txtCPF.getText().isEmpty()) {
+            variavel++;
+        }
 
-// Verifica se o CEP está vazio
-if (txtCEP.getText() == null || txtCEP.getText().isEmpty()) {
-    variavel++;
-}
+        if (txtCEP.getText() == null || txtCEP.getText().isEmpty()) {
+            variavel++;
+        }
 
-// Verifica se o telefone está vazio
-if (txtTelefone.getText() == null || txtTelefone.getText().isEmpty()) {
-    variavel++;
-}
+        if (txtTelefone.getText() == null || txtTelefone.getText().isEmpty()) {
+            variavel++;
+        }
 
-// Verifica a data de nascimento
-if (txtDataNascimento.getText() == null || txtDataNascimento.getText().isEmpty()) {
-    variavel++;
-}
+        if (txtDataNascimento.getText() == null || txtDataNascimento.getText().isEmpty()) {
+            variavel++;
+        }
 
-// Verifica o endereço
-if (txtEndereco.getText() == null || txtEndereco.getText().isEmpty()) {
-    variavel++;
-}
+        if (txtEndereco.getText() == null || txtEndereco.getText().isEmpty()) {
+            variavel++;
+        }
 
-// Verifica o complemento do endereço
-if (txtComplementoEndereco.getText() == null || txtComplementoEndereco.getText().isEmpty()) {
-    variavel++;
-}
+        if (txtSexo.getSelectedItem() == null || txtSexo.getSelectedItem().toString().equals("-")) {
+            variavel++;
+        }
 
-// Verifica o sexo (se está selecionado)
-if (txtSexo.getSelectedItem() == null || txtSexo.getSelectedItem().toString().equals("-")) {
-    variavel++;
-}
-
-// Se todas as validações passaram (variavel == 0)
-if (variavel == 0) {
-    TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
-    tpu.setVisible(true);
-    this.dispose();
-} else {
-    JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos corretamente.", "Erro", JOptionPane.ERROR_MESSAGE);
-}
-
+        // Se todas as validações passaram (variavel == 0)
+        if (variavel == 0) {
+            Cliente cliente = new Cliente();
+            cliente.setEmail(txtEmailCadastro.getText());
+            cliente.setSenha(txtSenhaCadastro.getText());
+            cliente.setNome(txtNomeCompleto.getText());
+            cliente.setCpf(txtCPF.getText());
+            cliente.setSexo(txtSexo.getSelectedItem().toString());
+            cliente.setCep(txtNomeCompleto.getText());
+            cliente.setEndereco(txtNomeCompleto.getText());
+            cliente.setComplemento(txtNomeCompleto.getText());
+            cliente.setTelefone(txtTelefone.getText());
+            cliente.setDataNascimento(txtDataNascimento.getText());
+            
+            TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
+            tpu.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos corretamente.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
