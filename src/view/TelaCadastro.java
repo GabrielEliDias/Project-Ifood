@@ -3,10 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package view;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import javax.swing.JOptionPane;
 import model.bean.cliente.Cliente;
+import model.dao.ClienteDAO;
 
 /**
  *
@@ -380,6 +384,14 @@ public class TelaCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private LocalDate converterDataNascimento(String dataTexto) {
+        if (dataTexto.length() != 8) {
+            throw new IllegalArgumentException("A data deve estar no formato DDMMYYYY.");
+        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
+        return LocalDate.parse(dataTexto, formatter);
+    }
+    
     private void txtEmailConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailConfirmarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailConfirmarActionPerformed
@@ -406,44 +418,48 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // Verifica se todos os campos foram preenchidos (o complemento é opcional)
-        int variavel = 0;
+        boolean camposPreenchidos = true;
 
         if (txtEmailCadastro.getText() == null || txtEmailCadastro.getText().isEmpty() || !txtEmailCadastro.getText().equals(txtEmailConfirmar.getText())) {
-            variavel++;
+            camposPreenchidos = false;
         }
 
         if (txtSenhaCadastro.getText() == null || txtSenhaCadastro.getText().isEmpty() || 
         !txtSenhaCadastro.getText().equals(txtSenhaConfirmar.getText())) {
-            variavel++;
+            camposPreenchidos = false;
         }
 
         if (txtCPF.getText() == null || txtCPF.getText().isEmpty()) {
-            variavel++;
+            camposPreenchidos = false;
         }
 
         if (txtCEP.getText() == null || txtCEP.getText().isEmpty()) {
-            variavel++;
+            camposPreenchidos = false;
         }
 
         if (txtTelefone.getText() == null || txtTelefone.getText().isEmpty()) {
-            variavel++;
+            camposPreenchidos = false;
         }
 
         if (txtDataNascimento.getText() == null || txtDataNascimento.getText().isEmpty()) {
-            variavel++;
+            camposPreenchidos = false;
         }
 
         if (txtEndereco.getText() == null || txtEndereco.getText().isEmpty()) {
-            variavel++;
+            camposPreenchidos = false;
+        }
+        
+        if (txtComplementoEndereco.getText() == null || txtComplementoEndereco.getText().isEmpty()) {
+            txtComplementoEndereco.setText("");
         }
 
         if (txtSexo.getSelectedItem() == null || txtSexo.getSelectedItem().toString().equals("-")) {
-            variavel++;
+            camposPreenchidos = false;
         }
 
-        // Se todas as validações passaram (variavel == 0)
-        if (variavel == 0) {
+        if (camposPreenchidos) {
             Cliente cliente = new Cliente();
+            ClienteDAO usuarioDAO = new ClienteDAO();
             cliente.setEmail(txtEmailCadastro.getText());
             cliente.setSenha(txtSenhaCadastro.getText());
             cliente.setNome(txtNomeCompleto.getText());
@@ -453,7 +469,14 @@ public class TelaCadastro extends javax.swing.JFrame {
             cliente.setEndereco(txtNomeCompleto.getText());
             cliente.setComplemento(txtNomeCompleto.getText());
             cliente.setTelefone(txtTelefone.getText());
-            cliente.setDataNascimento(txtDataNascimento.getText());
+            try {
+                String dataTexto = txtDataNascimento.getText();
+                LocalDate dataNascimento = converterDataNascimento(dataTexto);
+                cliente.setDataNascimento(dataNascimento);
+            } catch (IllegalArgumentException | DateTimeParseException e) {
+                System.err.println("Erro: " + e.getMessage());
+            }
+            usuarioDAO.create(cliente);
             
             TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
             tpu.setVisible(true);
