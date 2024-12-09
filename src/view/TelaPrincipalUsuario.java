@@ -271,6 +271,11 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 87, 34));
         jButton1.setText("👤");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(255, 87, 34));
@@ -369,8 +374,14 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        CarrinhoCompras cc = new CarrinhoCompras();
+        cc.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ContaUsuario cu = new ContaUsuario();
+        cu.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

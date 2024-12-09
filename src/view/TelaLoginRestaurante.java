@@ -5,10 +5,13 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
 /**
  *
  * @author gabri
  */
+
+
 public class TelaLoginRestaurante extends javax.swing.JFrame {
 
     /**
@@ -164,9 +167,12 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AcessarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcessarRestauranteActionPerformed
-        if(txtEmailLogin.getText().equals("Usuario") && txtSenhaRestauranteLogin.getText().equals("1234"))
+        if(txtCNPJLogin.getText().equals("Usuario") && txtSenhaRestauranteLogin.getText().equals("1234"))
         {
-            JOptionPane.showMessageDialog(null, "bem vindo");
+            JOptionPane.showMessageDialog(null, "bem vindo ");
+            TelaPrincipalRestaurante tpr = new TelaPrincipalRestaurante();
+            tpr.setVisible(true);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Acesso Negado");
         }
@@ -177,7 +183,10 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaRestauranteLoginActionPerformed
 
     private void DirecionarCadastroRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DirecionarCadastroRestauranteActionPerformed
-        // TODO add your handling code here:
+TelaPrincipalRestaurante tpr = new TelaPrincipalRestaurante();
+tpr.setVisible(true);
+this.dispose();
+
     }//GEN-LAST:event_DirecionarCadastroRestauranteActionPerformed
 
     /**

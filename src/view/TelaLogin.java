@@ -178,7 +178,9 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtSenhaLoginActionPerformed
 
     private void DirecinarCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DirecinarCadastroActionPerformed
-        // TODO add your handling code here:
+        TelaCadastro tc = new TelaCadastro();
+        tc.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_DirecinarCadastroActionPerformed
 
     /**

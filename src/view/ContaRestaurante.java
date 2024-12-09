@@ -48,7 +48,7 @@ public class ContaRestaurante extends javax.swing.JFrame {
         txtRestauranteCEP = new javax.swing.JFormattedTextField();
         txtRestauranteCNPJ = new javax.swing.JFormattedTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Logo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Franklin Gothic Medium", 0, 14))); // NOI18N
 
