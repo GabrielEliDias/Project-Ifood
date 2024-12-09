@@ -4,7 +4,7 @@ Configurar o MySQL e Importar o Banco
 3. Abra o terminal na pasta do arquivo e execute:
   mysql -u root -p < database.sql
 4. Acesse o banco no terminal para verificar:
-  mysql -u root -p
-  SHOW DATABASES;
-  USE nome_do_banco;
-  SHOW TABLES;
+mysql -u root -p
+SHOW DATABASES;
+USE nome_do_banco;
+SHOW TABLES;
