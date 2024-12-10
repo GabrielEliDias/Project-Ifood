@@ -34,19 +34,18 @@ public class DonoRestauranteDAO implements DAO<DonoRestaurante> {
 
                 // Inserindo na tabela `donosderestaurante`
                 stmtDono = con.prepareStatement(
-                    "INSERT INTO donosderestaurante (usuario_id, restaurante_id) " +
-                    "VALUES (?, ?)"
+                "INSERT INTO donosderestaurante (usuario_id, restaurante_id) VALUES (?, ?)"
                 );
                 stmtDono.setInt(1, usuarioId);
                 stmtDono.setInt(2, restauranteId);
-
                 stmtDono.executeUpdate();
+
                 JOptionPane.showMessageDialog(null, "Dono de restaurante salvo com sucesso!");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao salvar dono de restaurante: " + ex.getMessage());
         } finally {
-            ConnectionFactory.closeConnection(con, stmtUsuario, rs);
+            ConnectionFactory.closeConnection(null, stmtUsuario, rs);
             ConnectionFactory.closeConnection(con, stmtDono);
         }
     }

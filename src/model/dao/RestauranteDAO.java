@@ -22,7 +22,7 @@ public class RestauranteDAO implements DAO<Restaurante> {
             // Inserindo na tabela `restaurantes`
             stmtRestaurante = con.prepareStatement("INSERT INTO restaurantes (nome, endereço) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
             stmtRestaurante.setString(1, restaurante.getNome());
-            stmtRestaurante.setString(4, restaurante.getEndereco());
+            stmtRestaurante.setString(2, restaurante.getEndereco());
             stmtRestaurante.executeUpdate();
             JOptionPane.showMessageDialog(null, "Restaurante salvo com sucesso!");
         } catch (SQLException ex) {

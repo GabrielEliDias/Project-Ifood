@@ -28,27 +28,26 @@ public class BebidaDAO implements DAO<Bebida> {
             stmtProduto.setInt(4, bebida.getTempoPreparo());
             stmtProduto.executeUpdate();
 
-            // Obtendo o ID do produto recém-criado
+            // Obtendo o ID do usuário recém-criado
             rs = stmtProduto.getGeneratedKeys();
             if (rs.next()) {
                 int produtoId = rs.getInt(1);
 
                 // Inserindo na tabela `bebidas`
                 stmtBebida = con.prepareStatement(
-                    "INSERT INTO bebidas (produto_id, tamanho_ml, alcoólica) " +
-                    "VALUES (?, ?, ?, ?)"
+                "INSERT INTO bebidas (produto_id, tamanho_ml, alcoólica) VALUES (?, ?, ?)"
                 );
                 stmtBebida.setInt(1, produtoId);
                 stmtBebida.setInt(2, bebida.getTamanhoMl());
                 stmtBebida.setBoolean(3, bebida.isAlcoolica());
-
                 stmtBebida.executeUpdate();
+
                 JOptionPane.showMessageDialog(null, "Bebida salva com sucesso!");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao salvar bebida: " + ex.getMessage());
         } finally {
-            ConnectionFactory.closeConnection(con, stmtProduto, rs);
+            ConnectionFactory.closeConnection(null, stmtProduto, rs);
             ConnectionFactory.closeConnection(con, stmtBebida);
         }
     }

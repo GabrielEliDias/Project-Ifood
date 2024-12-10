@@ -28,28 +28,27 @@ public class ComidaDAO implements DAO<Comida> {
             stmtProduto.setInt(4, comida.getTempoPreparo());
             stmtProduto.executeUpdate();
 
-            // Obtendo o ID do produto recém-criado
+            // Obtendo o ID do usuário recém-criado
             rs = stmtProduto.getGeneratedKeys();
             if (rs.next()) {
                 int produtoId = rs.getInt(1);
 
                 // Inserindo na tabela `comidas`
                 stmtComida = con.prepareStatement(
-                    "INSERT INTO comidas (produto_id, tipo_de_cozinha, vegetariano, vegano) " +
-                    "VALUES (?, ?, ?, ?)"
+                "INSERT INTO comidas (produto_id, tipo_culinária, vegetariana, vegana) VALUES (?, ?, ?, ?)"
                 );
                 stmtComida.setInt(1, produtoId);
                 stmtComida.setString(2, comida.getTipoCozinha());
                 stmtComida.setBoolean(3, comida.isVegetariano());
                 stmtComida.setBoolean(4, comida.isVegano());
-
                 stmtComida.executeUpdate();
+
                 JOptionPane.showMessageDialog(null, "Comida salva com sucesso!");
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao salvar comida: " + ex.getMessage());
         } finally {
-            ConnectionFactory.closeConnection(con, stmtProduto, rs);
+            ConnectionFactory.closeConnection(null, stmtProduto, rs);
             ConnectionFactory.closeConnection(con, stmtComida);
         }
     }
