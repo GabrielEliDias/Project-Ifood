@@ -6,6 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.bean.donodorestaurante.Comida;
 import model.interfaces.DAO;
@@ -50,6 +53,24 @@ public class ComidaDAO implements DAO<Comida> {
         } finally {
             ConnectionFactory.closeConnection(null, stmtProduto, rs);
             ConnectionFactory.closeConnection(con, stmtComida);
+        }
+    }
+    
+    public List<Comida> read() {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            stmt = con.prepareStatement("SELECT * FROM comidas");
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+                Comida comida = new Comida();
+                comida.setId();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ComidaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

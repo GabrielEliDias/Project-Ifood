@@ -379,7 +379,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         if (camposPreenchidos) {
             Cliente cliente = new Cliente();
-            ClienteDAO usuarioDAO = new ClienteDAO();
+//            ClienteDAO usuarioDAO = new ClienteDAO();
             cliente.setEmail(txtEmailCadastro.getText());
             cliente.setSenha(txtSenhaCadastro.getText());
             cliente.setNome(txtNomeCompleto.getText());
@@ -387,7 +387,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             cliente.setSexo(txtSexo.getSelectedItem().toString());
             cliente.setEndereco(txtNomeCompleto.getText());
             cliente.setTelefone(txtTelefone.getText());
-            usuarioDAO.create(cliente);
+//            usuarioDAO.create(cliente);
             
             TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
             tpu.setVisible(true);
