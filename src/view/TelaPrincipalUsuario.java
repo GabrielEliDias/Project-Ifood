@@ -56,6 +56,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
 
         jButton16.setText("▲");
 
@@ -297,6 +298,14 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
             }
         });
 
+        jButton20.setBackground(new java.awt.Color(255, 87, 34));
+        jButton20.setText("👋");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -309,6 +318,8 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
@@ -323,7 +334,8 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(jButton20))
                 .addGap(126, 126, 126))
         );
 
@@ -383,6 +395,12 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         cu.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+    TelaLogin tl = new TelaLogin();
+    tl.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_jButton20ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -432,6 +450,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

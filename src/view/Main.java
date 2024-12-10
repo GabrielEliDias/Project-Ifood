@@ -1,7 +1,7 @@
 package view;
 
 import javax.swing.*;
-import View.TelaLogin;
+import view.TelaLogin;
 
 public class Main {
     public static void main(String[] args) {

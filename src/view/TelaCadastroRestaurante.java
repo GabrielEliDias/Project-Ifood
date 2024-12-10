@@ -44,21 +44,15 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
         txtSenhaConfirmar = new javax.swing.JPasswordField();
         jLabel8 = new javax.swing.JLabel();
         txtEndereco = new javax.swing.JTextField();
-        txtCEP = new javax.swing.JFormattedTextField();
         jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         txtCNPJ = new javax.swing.JFormattedTextField();
         txtTelefone = new javax.swing.JFormattedTextField();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         txtNomeCompleto = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        txtComplementoEndereco = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jLabel16 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 87, 34));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -99,7 +93,7 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
         jLabel2.setText("Empresa nova? Cadastre-se agora e de forma gratuita!");
 
         jLabel3.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
-        jLabel3.setText("E-mail:");
+        jLabel3.setText("E-mail do restaurante:");
 
         txtEmailCadastro.setToolTipText("Coloque seu e-mail aqui!");
 
@@ -111,38 +105,24 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
-        jLabel4.setText("Confirmação de e-mail:");
+        jLabel4.setText("Confirmação de e-mail do restaurante:");
 
         jLabel6.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         jLabel6.setText("Nome do restaurante:");
 
         jLabel7.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
-        jLabel7.setText("Confirmação da senha:");
+        jLabel7.setText("Confirmação da senha restaurante:");
 
         jLabel8.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
-        jLabel8.setText("Senha:");
+        jLabel8.setText("Senha do resturante:");
 
         txtEndereco.setToolTipText("Coloque seu e-mail aqui!");
-
-        try {
-            txtCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        txtCEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCEPActionPerformed(evt);
-            }
-        });
 
         jLabel9.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         jLabel9.setText("CNPJ");
 
-        jLabel11.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
-        jLabel11.setText("CEP");
-
         try {
-            txtCNPJ.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
+            txtCNPJ.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -153,7 +133,7 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
         });
 
         try {
-            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(55) +## #####-####")));
+            txtTelefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("+55 ## #####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -166,9 +146,6 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         jLabel12.setText("Telefone:");
 
-        jLabel13.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
-        jLabel13.setText("Complemento do endereço:");
-
         txtNomeCompleto.setToolTipText("Coloque seu e-mail aqui!");
         txtNomeCompleto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,24 +156,11 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         jLabel14.setText("Endereço do restaurante:");
 
-        txtComplementoEndereco.setToolTipText("Coloque seu e-mail aqui!");
-
         jButton1.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         jButton1.setText("Concluir cadastro!");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel16.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 13)); // NOI18N
-        jLabel16.setText("Já possui conta? Entre nela por aqui!");
-
-        jButton2.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 13)); // NOI18N
-        jButton2.setText("Login");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -208,6 +172,9 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -222,52 +189,27 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNomeCompleto)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel14)
-                                            .addComponent(txtCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel14)
                                         .addGap(0, 78, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtSenhaConfirmar, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEmailConfirmar, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel7))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtComplementoEndereco, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtSenhaConfirmar, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmailConfirmar, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel7))
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGap(0, 48, Short.MAX_VALUE)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel9)
-                                            .addComponent(txtCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addGap(23, 23, 23)
-                                                .addComponent(jLabel12))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jButton1)
-                                        .addGap(83, 83, 83)))
-                                .addGap(60, 60, 60))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel2))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(117, 117, 117))))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(txtCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel12)))
+                            .addComponent(jButton1))
+                        .addGap(60, 60, 60))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -301,24 +243,12 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
                     .addComponent(txtNomeCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel13))
+                .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtComplementoEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
-                .addGap(3, 3, 3)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -326,98 +256,72 @@ public class TelaCadastroRestaurante extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtEmailConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailConfirmarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEmailConfirmarActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int variavel = 0;
 
-    private void txtCEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCEPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCEPActionPerformed
+        // Verifica o e-mail
+        if (txtEmailCadastro.getText() == null || txtEmailCadastro.getText().isEmpty() ||
+            !txtEmailCadastro.getText().equals(txtEmailConfirmar.getText())) {
+            variavel++;
+        }
 
-    private void txtCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCNPJActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCNPJActionPerformed
+        // Verifica a senha
+        if (txtSenhaCadastro.getText() == null || txtSenhaCadastro.getText().isEmpty() ||
+            !txtSenhaCadastro.getText().equals(txtSenhaConfirmar.getText())) {
+            variavel++;
+        }
 
-    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneActionPerformed
+        // Verifica se o CNPJ está vazio
+        if (txtCNPJ.getText() == null || txtCNPJ.getText().isEmpty()) {
+            variavel++;
+        }
+
+        // Verifica se o telefone está vazio
+        if (txtTelefone.getText() == null || txtTelefone.getText().isEmpty()) {
+            variavel++;
+        }
+
+        // Verifica o endereço
+        if (txtEndereco.getText() == null || txtEndereco.getText().isEmpty()) {
+            variavel++;
+        }
+
+        // Verifica o resultado final
+        if (variavel == 0) {
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos corretamente.", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtNomeCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeCompletoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeCompletoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int variavel = 0;
+    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefoneActionPerformed
 
-// Verifica o e-mail
-if (txtEmailCadastro.getText() == null || txtEmailCadastro.getText().isEmpty() || 
-    !txtEmailCadastro.getText().equals(txtEmailConfirmar.getText())) {
-    variavel++;
-}
+    private void txtCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCNPJActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCNPJActionPerformed
 
-// Verifica a senha
-if (txtSenhaCadastro.getText() == null || txtSenhaCadastro.getText().isEmpty() || 
-    !txtSenhaCadastro.getText().equals(txtSenhaConfirmar.getText())) {
-    variavel++;
-}
-
-// Verifica se o CNPJ está vazio
-if (txtCNPJ.getText() == null || txtCNPJ.getText().isEmpty()) {
-    variavel++;
-}
-
-// Verifica se o CEP está vazio
-if (txtCEP.getText() == null || txtCEP.getText().isEmpty()) {
-    variavel++;
-}
-
-// Verifica se o telefone está vazio
-if (txtTelefone.getText() == null || txtTelefone.getText().isEmpty()) {
-    variavel++;
-}
-
-// Verifica o endereço
-if (txtEndereco.getText() == null || txtEndereco.getText().isEmpty()) {
-    variavel++;
-}
-
-// Verifica o complemento do endereço
-if (txtComplementoEndereco.getText() == null || txtComplementoEndereco.getText().isEmpty()) {
-    variavel++;
-}
-
-// Verifica o resultado final
-if (variavel == 0) {
-    TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
-    tpu.setVisible(true);
-    this.dispose();
-} else {
-    JOptionPane.showMessageDialog(this, "Por favor, preencha todos os campos corretamente.", "Erro", JOptionPane.ERROR_MESSAGE);
-}
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        TelaLoginRestaurante tlr = new TelaLoginRestaurante();
-        tlr.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void txtEmailConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailConfirmarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailConfirmarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -456,13 +360,9 @@ if (variavel == 0) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -473,9 +373,7 @@ if (variavel == 0) {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JFormattedTextField txtCEP;
     private javax.swing.JFormattedTextField txtCNPJ;
-    private javax.swing.JTextField txtComplementoEndereco;
     private javax.swing.JTextField txtEmailCadastro;
     private javax.swing.JTextField txtEmailConfirmar;
     private javax.swing.JTextField txtEndereco;

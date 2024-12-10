@@ -25,7 +25,6 @@ public class ClienteDAO {
 
         // Obtendo o ID do usuário recém-criado
         rs = stmtUsuario.getGeneratedKeys();
-        if (rs.next()) {
             int usuarioId = rs.getInt(1);
 
             // Inserindo na tabela `clientes`
@@ -42,6 +41,7 @@ public class ClienteDAO {
 
             stmtCliente.executeUpdate();
             JOptionPane.showMessageDialog(null, "Cliente salvo com sucesso!");
+        if (rs.next()) {
         }
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, "Erro ao salvar cliente: " + ex.getMessage());

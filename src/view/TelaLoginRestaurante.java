@@ -35,10 +35,10 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         AcessarRestaurante = new javax.swing.JButton();
-        txtSenhaRestauranteLogin = new javax.swing.JPasswordField();
+        txtSenha = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         DirecionarCadastroRestaurante = new javax.swing.JButton();
-        txtCNPJLogin = new javax.swing.JFormattedTextField();
+        txtEmail = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -51,7 +51,7 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
         jLabel3.setText("Senha:");
 
         jLabel4.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
-        jLabel4.setText("CNPJ:");
+        jLabel4.setText("Email:");
 
         AcessarRestaurante.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 18)); // NOI18N
         AcessarRestaurante.setText("Acessar");
@@ -61,10 +61,10 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
             }
         });
 
-        txtSenhaRestauranteLogin.setToolTipText("Coloque aqui sua senha!");
-        txtSenhaRestauranteLogin.addActionListener(new java.awt.event.ActionListener() {
+        txtSenha.setToolTipText("Coloque aqui sua senha!");
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSenhaRestauranteLoginActionPerformed(evt);
+                txtSenhaActionPerformed(evt);
             }
         });
 
@@ -79,11 +79,12 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
             }
         });
 
-        try {
-            txtCNPJLogin.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/###1-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
+        txtEmail.setToolTipText("Aqui coloque seu e-mail!");
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -96,13 +97,13 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtCNPJLogin)
+                    .addComponent(txtEmail)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(DirecionarCadastroRestaurante)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(AcessarRestaurante)
                         .addGap(11, 11, 11))
-                    .addComponent(txtSenhaRestauranteLogin)
+                    .addComponent(txtSenha)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
@@ -119,11 +120,11 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(txtCNPJLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtSenhaRestauranteLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -167,7 +168,7 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AcessarRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcessarRestauranteActionPerformed
-        if(txtCNPJLogin.getText().equals("Usuario") && txtSenhaRestauranteLogin.getText().equals("1234"))
+        if(txtEmail.getText().equals("0") && txtSenha.getText().equals("0"))
         {
             JOptionPane.showMessageDialog(null, "bem vindo ");
             TelaPrincipalRestaurante tpr = new TelaPrincipalRestaurante();
@@ -178,16 +179,20 @@ public class TelaLoginRestaurante extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_AcessarRestauranteActionPerformed
 
-    private void txtSenhaRestauranteLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaRestauranteLoginActionPerformed
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtSenhaRestauranteLoginActionPerformed
+    }//GEN-LAST:event_txtSenhaActionPerformed
 
     private void DirecionarCadastroRestauranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DirecionarCadastroRestauranteActionPerformed
-TelaPrincipalRestaurante tpr = new TelaPrincipalRestaurante();
-tpr.setVisible(true);
+TelaCadastroRestaurante tcr = new TelaCadastroRestaurante();
+tcr.setVisible(true);
 this.dispose();
 
     }//GEN-LAST:event_DirecionarCadastroRestauranteActionPerformed
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,7 +239,9 @@ this.dispose();
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JFormattedTextField txtCNPJLogin;
-    private javax.swing.JPasswordField txtSenhaRestauranteLogin;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEmailLogin;
+    private javax.swing.JTextField txtEmailLogin1;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 }

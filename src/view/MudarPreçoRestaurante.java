@@ -30,11 +30,11 @@ public class MudarPreçoRestaurante extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         botaoConfirmarNovaSenha = new javax.swing.JButton();
-        txtNovaSenhaUsuario = new javax.swing.JPasswordField();
-        txtNovaSenhaConfirmacao = new javax.swing.JPasswordField();
         jLabel13 = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jFormattedTextField2 = new javax.swing.JFormattedTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel12.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 13)); // NOI18N
         jLabel12.setText("Diga o novo preço");
@@ -47,21 +47,13 @@ public class MudarPreçoRestaurante extends javax.swing.JFrame {
             }
         });
 
-        txtNovaSenhaUsuario.setEditable(false);
-        txtNovaSenhaUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNovaSenhaUsuarioActionPerformed(evt);
-            }
-        });
-
-        txtNovaSenhaConfirmacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNovaSenhaConfirmacaoActionPerformed(evt);
-            }
-        });
-
         jLabel13.setFont(new java.awt.Font("Franklin Gothic Medium", 0, 13)); // NOI18N
         jLabel13.setText("Preço anterior");
+
+        jFormattedTextField1.setEditable(false);
+        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("¤#,##0.00"))));
+
+        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -70,21 +62,17 @@ public class MudarPreçoRestaurante extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 166, Short.MAX_VALUE)
                         .addComponent(botaoConfirmarNovaSenha))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNovaSenhaConfirmacao)
-                            .addComponent(txtNovaSenhaUsuario)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(0, 176, Short.MAX_VALUE)))))
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,12 +80,12 @@ public class MudarPreçoRestaurante extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtNovaSenhaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
+                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtNovaSenhaConfirmacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addComponent(botaoConfirmarNovaSenha)
                 .addGap(29, 29, 29))
         );
@@ -119,14 +107,6 @@ public class MudarPreçoRestaurante extends javax.swing.JFrame {
     private void botaoConfirmarNovaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConfirmarNovaSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botaoConfirmarNovaSenhaActionPerformed
-
-    private void txtNovaSenhaUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNovaSenhaUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNovaSenhaUsuarioActionPerformed
-
-    private void txtNovaSenhaConfirmacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNovaSenhaConfirmacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNovaSenhaConfirmacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,10 +146,10 @@ public class MudarPreçoRestaurante extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoConfirmarNovaSenha;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField txtNovaSenhaConfirmacao;
-    private javax.swing.JPasswordField txtNovaSenhaUsuario;
     // End of variables declaration//GEN-END:variables
 }

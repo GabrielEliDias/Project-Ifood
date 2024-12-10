@@ -164,6 +164,9 @@ public class TelaLogin extends javax.swing.JFrame {
         if(txtEmailLogin.getText().equals("Usuario") && txtSenhaLogin.getText().equals("1234"))
         {
             JOptionPane.showMessageDialog(null, "bem vindo");
+            TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
+            tpu.setVisible(true);
+            this.dispose();
         } else {
             JOptionPane.showMessageDialog(null, "Acesso Negado");
         }
