@@ -5,8 +5,8 @@ public abstract class Usuario {
     private String senha;
 
     public Usuario() {
-        this.email = null;
-        this.senha = null;
+        this.email = "";
+        this.senha = "";
     }
 
     public Usuario(String email, String senha) {

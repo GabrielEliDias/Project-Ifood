@@ -30,18 +30,15 @@ public class ClienteDAO {
 
             // Inserindo na tabela `clientes`
             stmtCliente = con.prepareStatement(
-                "INSERT INTO clientes (usuario_id, nome, cpf, sexo, cep, endereço, complemento, telefone, data_nascimento) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+                "INSERT INTO clientes (usuario_id, nome, cpf, sexo, endereço, telefone) " +
+                "VALUES (?, ?, ?, ?, ?, ?)"
             );
             stmtCliente.setInt(1, usuarioId);
             stmtCliente.setString(2, cliente.getNome());
             stmtCliente.setString(3, cliente.getCpf());
             stmtCliente.setString(4, cliente.getSexo());
-            stmtCliente.setString(5, cliente.getCep());
-            stmtCliente.setString(6, cliente.getEndereco());
-            stmtCliente.setString(7, cliente.getComplemento());
-            stmtCliente.setString(8, cliente.getTelefone());
-            stmtCliente.setDate(9, java.sql.Date.valueOf(cliente.getDataNascimento()));
+            stmtCliente.setString(5, cliente.getEndereco());
+            stmtCliente.setString(6, cliente.getTelefone());
 
             stmtCliente.executeUpdate();
             JOptionPane.showMessageDialog(null, "Cliente salvo com sucesso!");

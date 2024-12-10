@@ -8,7 +8,7 @@ public class Comida extends Produto {
     private boolean vegano;
 
     public Comida() {
-        super("", "", 0.0, 0);
+        super();
         this.tipoCozinha = "";
         this.vegetariano = false;
         this.vegano = false;

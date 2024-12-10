@@ -17,13 +17,9 @@ public class RestauranteDAO {
 
     try {
         // Inserindo na tabela `restaurantes`
-        stmtRestaurante = con.prepareStatement("INSERT INTO restaurantes (nome, cnpj, cep, endereço, complemento, telefone) VALUES (?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+        stmtRestaurante = con.prepareStatement("INSERT INTO restaurantes (nome, endereço) VALUES (?, ?)", Statement.RETURN_GENERATED_KEYS);
         stmtRestaurante.setString(1, restaurante.getNome());
-        stmtRestaurante.setString(2, restaurante.getCnpj());
-        stmtRestaurante.setString(3, restaurante.getCep());
         stmtRestaurante.setString(4, restaurante.getEndereco());
-        stmtRestaurante.setString(5, restaurante.getComplemento());
-        stmtRestaurante.setString(6, restaurante.getTelefone());
         stmtRestaurante.executeUpdate();
         JOptionPane.showMessageDialog(null, "Restaurante salvo com sucesso!");
     } catch (SQLException ex) {
