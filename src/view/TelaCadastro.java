@@ -5,8 +5,6 @@
  */
 package view;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import javax.swing.JOptionPane;
 import model.bean.cliente.Cliente;
@@ -383,14 +381,6 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private LocalDate converterDataNascimento(String dataTexto) {
-        if (dataTexto.length() != 8) {
-            throw new IllegalArgumentException("A data deve estar no formato DDMMYYYY.");
-        }
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
-        return LocalDate.parse(dataTexto, formatter);
-    }
     
     private void txtEmailConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailConfirmarActionPerformed
         // TODO add your handling code here:
@@ -429,11 +419,11 @@ public class TelaCadastro extends javax.swing.JFrame {
             camposPreenchidos = false;
         }
 
-        if (txtCPF.getText() == null || txtCPF.getText().isEmpty()) {
+        if (txtNomeCompleto.getText() == null || txtNomeCompleto.getText().isEmpty()) {
             camposPreenchidos = false;
         }
-
-        if (txtCEP.getText() == null || txtCEP.getText().isEmpty()) {
+        
+        if (txtCPF.getText() == null || txtCPF.getText().isEmpty()) {
             camposPreenchidos = false;
         }
 
@@ -441,16 +431,8 @@ public class TelaCadastro extends javax.swing.JFrame {
             camposPreenchidos = false;
         }
 
-        if (txtDataNascimento.getText() == null || txtDataNascimento.getText().isEmpty()) {
-            camposPreenchidos = false;
-        }
-
         if (txtEndereco.getText() == null || txtEndereco.getText().isEmpty()) {
             camposPreenchidos = false;
-        }
-        
-        if (txtComplementoEndereco.getText() == null || txtComplementoEndereco.getText().isEmpty()) {
-            txtComplementoEndereco.setText("");
         }
 
         if (txtSexo.getSelectedItem() == null || txtSexo.getSelectedItem().toString().equals("-")) {
@@ -465,17 +447,8 @@ public class TelaCadastro extends javax.swing.JFrame {
             cliente.setNome(txtNomeCompleto.getText());
             cliente.setCpf(txtCPF.getText());
             cliente.setSexo(txtSexo.getSelectedItem().toString());
-            cliente.setCep(txtNomeCompleto.getText());
             cliente.setEndereco(txtNomeCompleto.getText());
-            cliente.setComplemento(txtNomeCompleto.getText());
             cliente.setTelefone(txtTelefone.getText());
-            try {
-                String dataTexto = txtDataNascimento.getText();
-                LocalDate dataNascimento = converterDataNascimento(dataTexto);
-                cliente.setDataNascimento(dataNascimento);
-            } catch (IllegalArgumentException | DateTimeParseException e) {
-                System.err.println("Erro: " + e.getMessage());
-            }
             usuarioDAO.create(cliente);
             
             TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
