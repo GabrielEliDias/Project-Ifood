@@ -7,7 +7,6 @@ package view;
 
 import javax.swing.JOptionPane;
 import model.bean.cliente.Cliente;
-import model.dao.ClienteDAO;
 
 /**
  *
@@ -379,7 +378,6 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         if (camposPreenchidos) {
             Cliente cliente = new Cliente();
-//            ClienteDAO usuarioDAO = new ClienteDAO();
             cliente.setEmail(txtEmailCadastro.getText());
             cliente.setSenha(txtSenhaCadastro.getText());
             cliente.setNome(txtNomeCompleto.getText());
@@ -387,7 +385,6 @@ public class TelaCadastro extends javax.swing.JFrame {
             cliente.setSexo(txtSexo.getSelectedItem().toString());
             cliente.setEndereco(txtNomeCompleto.getText());
             cliente.setTelefone(txtTelefone.getText());
-//            usuarioDAO.create(cliente);
             
             TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
             tpu.setVisible(true);
