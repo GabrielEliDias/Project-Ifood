@@ -10,7 +10,7 @@ public class Cliente extends Usuario {
     private String telefone;
 
     public Cliente() {
-        super("", "");
+        super();
         this.nome = "";
         this.cpf = "";
         this.sexo = "";

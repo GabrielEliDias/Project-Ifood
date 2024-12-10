@@ -5,6 +5,11 @@ import model.bean.abstracts.Usuario;
 public class DonoRestaurante extends Usuario {
     private Restaurante restaurante;
     
+    public DonoRestaurante() {
+        super();
+        this.restaurante = null;
+    }
+    
     public DonoRestaurante(String email, String senha, Restaurante restaurante) {
         super(email, senha);
         this.restaurante = restaurante;
