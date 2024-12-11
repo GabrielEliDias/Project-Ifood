@@ -1,4 +1,6 @@
-Sistema de Gerenciamento de Restaurantes e Pedidos
+Integrantes: Gabriel Dias, Hugo Santos e João Maués
+
+# Sistema de Gerenciamento de Restaurantes e Pedidos
 
 Este projeto é um sistema para gerenciamento de restaurantes e pedidos, desenvolvido com base em conceitos de Programação Orientada a Objetos (POO). Ele abrange funcionalidades específicas para dois tipos de usuários: **Donos de Restaurante** e **Clientes**. O projeto inclui um diagrama UML de classes que representa as relações entre os elementos principais do sistema.
 
