@@ -1,16 +1,5 @@
-package view;
+package model.interfaces;
 
-/**
- *
- * @author gabri
- */
-
-
-public interface Cadastro<T> {
-    
-    boolean validateClientFields(T obj);
-    
-    boolean isFieldEmpty(String field);    
+public interface Cadastro {
+    boolean validarCredenciais(String email, String senha);
 }
-
-

@@ -5,20 +5,29 @@
  */
 package view;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import javax.swing.*;
+import model.bean.cliente.Cliente;
+import model.interfaces.Cadastro;
 
 /**
  *
  * @author gabri
  */
-public class TelaLogin extends javax.swing.JFrame {
+public class TelaLogin extends javax.swing.JFrame implements Cadastro {
 
     /**
      * Creates new form TelaLogin
      */
     public TelaLogin() {
         initComponents();
+    }
+    
+    static ArrayList<Cliente> clientes;
+    
+    @Override
+    public boolean validarCredenciais(String email, String senha) {
+        return clientes.stream().anyMatch((cliente) -> (cliente.getEmail().equals(email) && cliente.getSenha().equals(senha)));
     }
 
     /**
@@ -140,7 +149,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addContainerGap(332, Short.MAX_VALUE)))
         );
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/IMeal Total.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IMeal Total.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,7 +158,7 @@ public class TelaLogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 394, Short.MAX_VALUE))
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,8 +170,7 @@ public class TelaLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AcessarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcessarClienteActionPerformed
-        if(txtEmailLogin.getText().equals("Usuario") && txtSenhaLogin.getText().equals("1234"))
-        {
+        if(validarCredenciais(txtEmailLogin.getText(), txtSenhaLogin.getText())) {
             JOptionPane.showMessageDialog(null, "bem vindo");
             TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
             tpu.setVisible(true);
@@ -233,4 +241,5 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmailLogin;
     private javax.swing.JPasswordField txtSenhaLogin;
     // End of variables declaration//GEN-END:variables
+
 }

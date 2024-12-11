@@ -386,7 +386,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             cliente.setEndereco(txtNomeCompleto.getText());
             cliente.setTelefone(txtTelefone.getText());
             
-            TelaPrincipalUsuario tpu = new TelaPrincipalUsuario();
+            TelaLogin tpu = new TelaLogin();
             tpu.setVisible(true);
             this.dispose();
         } else {
